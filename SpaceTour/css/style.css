@@ -34,4 +34,41 @@ body {
     /* A modern css property */
     /* cut a triangle */
     clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+    position: relative;
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 80px;
+}
+
+.text-box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    /* make box in center */
+    transform: translate(-50%, -50%)
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 30px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 11px;
 }
