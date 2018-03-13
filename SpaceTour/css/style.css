@@ -1,0 +1,37 @@
+/*
+COLORS:
+Light blue: #87CEFA
+Medium blue: #00BFFF
+Dark blue: #1E90FF
+*/
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Lato", sans-serif;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 1.7;
+   color: #777;
+   padding: 25px;
+}
+
+.header {
+    /* percent of viewport height(dynamic design) */
+    height: 95vh;
+    /* linear-gradient: 颜色渐变（从右下到左上） */
+    background-image: linear-gradient(
+        to right bottom,
+         hsla(195, 100%, 50%, 0.6),
+         rgba(30, 143, 255, 0.6)),
+         url(../img/header-img.jpg);
+    background-size: cover;
+    background-position: top;
+    /* A modern css property */
+    /* cut a triangle */
+    clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+}
