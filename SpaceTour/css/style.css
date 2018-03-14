@@ -65,10 +65,61 @@ body {
     font-size: 50px;
     font-weight: 400;
     letter-spacing: 30px;
+
+    /* 设置动画 */
+    animation-name: moveInLeft;
+    /* 设置动画时间 */
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    /* 设置几秒后执行动画 */
+    /*animation-delay: 3s;*/
+
+    /* 动画将重复的次数 */
+    /*animation-iteration-count: 3;*/
 }
 
 .heading-primary-sub {
     display: block;
     font-size: 20px;
     letter-spacing: 11px;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+/* 动画：主标题向左移动 */
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        /* 根据x轴 */
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translate(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* 动画：主标题向右移动 */
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        /* 根据x轴 */
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translate(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
