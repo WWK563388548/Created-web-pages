@@ -45,6 +45,7 @@ body {
 
 .logo {
     height: 80px;
+    animation: moveInRight 1s ease-out;
 }
 
 .text-box {
@@ -52,12 +53,17 @@ body {
     top: 30%;
     left: 50%;
     /* make box in center */
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+
+    /* 解决动画进行时背景的颤动 */
+    backface-visibility: hidden;
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -114,12 +120,38 @@ body {
         transform: translateX(100px);
     }
 
-    80% {
-        transform: translate(20px);
-    }
-
     100% {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+/* pseudo-classes */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    /* 两边变圆 */
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+/* 点击按钮，按钮向下按压动画实现 */
+.btn:hover {
+    transform: translateY(-3px);
+    /* 增加阴影的属性 */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* 当点击时触发 */
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
