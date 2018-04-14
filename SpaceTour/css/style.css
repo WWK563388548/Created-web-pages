@@ -1,193 +1,156 @@
+@charset "UTF-8";
 /*
 COLORS:
 Light blue: #87CEFA
 Medium blue: #00BFFF
 Dark blue: #1E90FF
 */
-
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 body {
-   font-family: "Lato", sans-serif;
-   font-weight: 400;
-   font-size: 16px;
-   line-height: 1.7;
-   color: #777;
-   padding: 25px;
-}
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 25px; }
 
 .header {
-    /* percent of viewport height(dynamic design) */
-    height: 95vh;
-    /* linear-gradient: 颜色渐变（从右下到左上） */
-    background-image: linear-gradient(
-        to right bottom,
-         hsla(195, 100%, 50%, 0.6),
-         rgba(30, 143, 255, 0.6)),
-         url(../img/header-img.jpg);
-    background-size: cover;
-    background-position: top;
-    /* A modern css property */
-    /* cut a triangle */
-    clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
-    position: relative;
-}
+  /* percent of viewport height(dynamic design) */
+  height: 95vh;
+  /* linear-gradient: 颜色渐变（从右下到左上） */
+  background-image: linear-gradient(to right bottom, rgba(135, 206, 250, 0.6), rgba(30, 144, 255, 0.6)), url(../img/header-img.jpg);
+  background-size: cover;
+  background-position: top;
+  /* A modern css property */
+  /* cut a triangle */
+  clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+  position: relative; }
 
 .logo-box {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-}
+  position: absolute;
+  top: 40px;
+  left: 40px; }
 
 .logo {
-    height: 80px;
-    animation: moveInLeft 1s ease-out;
-}
+  height: 80px;
+  animation: moveInLeft 1s ease-out; }
 
 .text-box {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    /* make box in center */
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  /* make box in center */
+  transform: translate(-50%, -50%);
+  text-align: center; }
 
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-
-    /* 解决动画进行时背景的颤动 */
-    backface-visibility: hidden;
-    margin-bottom: 60px;
-}
+  color: #fff;
+  text-transform: uppercase;
+  /* 解决动画进行时背景的颤动 */
+  backface-visibility: hidden;
+  margin-bottom: 60px; }
 
 .heading-primary-main {
-    display: block;
-    font-size: 50px;
-    font-weight: 400;
-    letter-spacing: 30px;
-
-    /* 设置动画 */
-    animation-name: moveInLeft;
-    /* 设置动画时间 */
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-    /* 设置几秒后执行动画 */
-    /*animation-delay: 3s;*/
-
-    /* 动画将重复的次数 */
-    /*animation-iteration-count: 3;*/
-}
+  display: block;
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 30px;
+  /* 设置动画 */
+  animation-name: moveInLeft;
+  /* 设置动画时间 */
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  /* 设置几秒后执行动画 */
+  /*animation-delay: 3s;*/
+  /* 动画将重复的次数 */
+  /*animation-iteration-count: 3;*/ }
 
 .heading-primary-sub {
-    display: block;
-    font-size: 20px;
-    letter-spacing: 11px;
-
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-}
+  display: block;
+  font-size: 20px;
+  letter-spacing: 11px;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-in; }
 
 /* 动画：主标题向左移动 */
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        /* 根据x轴 */
-        transform: translateX(-100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
+  0% {
+    opacity: 0;
+    /* 根据x轴 */
+    transform: translateX(-100px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 /* 动画：主标题向右移动 */
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        /* 根据x轴 */
-        transform: translateX(100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
+  0% {
+    opacity: 0;
+    /* 根据x轴 */
+    transform: translateX(100px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 /* pseudo-classes */
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 40px;
-    display: inline-block;
-    /* 两边变圆 */
-    border-radius: 100px;
-    transition: all .2s;
-    position: relative;
-}
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  /* 两边变圆 */
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative; }
 
 /* 点击按钮，按钮向下按压动画实现 */
 .btn:hover {
-    transform: translateY(-3px);
-    /* 增加阴影的属性 */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
+  transform: translateY(-3px);
+  /* 增加阴影的属性 */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); }
+
 /* 当点击时触发 */
 .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-}
-
+  transform: translateY(-1px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); }
 
 .btn-white {
-    background-color: #fff;
-    color: #777;
-}
+  background-color: #fff;
+  color: #777; }
 
 .btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
 
 .btn-white::after {
-    background-color: #fff;
-}
+  background-color: #fff; }
 
 .btn:hover::after {
-    transform: scale(1.5);
-    opacity: 0;
-}
+  transform: scale(1.5);
+  opacity: 0; }
 
 .btn-animated {
-    animation: moveInBottom .5s ease-out .75s;
-    animation-fill-mode: backwards;
-}
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards; }

@@ -1,0 +1,19 @@
+{
+  "name": "spacetour",
+  "version": "1.0.0",
+  "description": "a webpage",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WWK563388548/Created-web-pages/tree/master/SpaceTour"
+  },
+  "author": "wwk",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.8.3"
+  }
+}
