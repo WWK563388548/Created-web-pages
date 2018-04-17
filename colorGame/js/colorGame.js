@@ -13,6 +13,7 @@ var colors = [
 var squares = document.querySelectorAll(".square");
 var pickedColor = colors[3];
 var colorDisplay = document.getElementById("colorDisplay");
+var messageDisplay = document.querySelector("#message");
 
 colorDisplay.textContent = pickedColor;
 
@@ -26,9 +27,19 @@ for (var i = 0; i < squares.length; i++) {
         // 获取方块颜色
        var clickedColor = this.style.backgroundColor;
        if(clickedColor === pickedColor) {
-           alert("Correct!");
+          messageDisplay.textContent = "Correct!";
+          changeColors(clickedColor);
        } else {
-           alert("Wrong!");
+          this.style.backgroundColor = '#232323';
+          messageDisplay.textContent = "Try Again!";
        }
     });
+}
+
+function changeColors(color) {
+   // 循环所有颜色方块
+   for(var i = 0; i < squares.length; i++) {
+      // 将所有颜色转换为正确的颜色 
+      squares[i].style.backgroundColor = color;
+   }
 }
