@@ -1,14 +1,46 @@
-var colors = generateRandomColors(9);
+var numberOfSquares = 9;
+var colors = generateRandomColors(numberOfSquares);
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easyBtn");
+var hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", function(){
+    hardBtn.classList.remove("selected");
+    easyBtn.classList.add("selected");
+    numberOfSquares = 3;
+    colors = generateRandomColors(numberOfSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(var i = 0; i < squares.length; i++){
+        if(colors[i]){
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+           squares[i].style.display = "none";
+        }
+    }
+});
+
+hardBtn.addEventListener("click", function(){
+    hardBtn.classList.add("selected");
+    easyBtn.classList.remove("selected");
+    numberOfSquares = 9;
+    colors = generateRandomColors(numberOfSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(var i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.display = "block";
+    }
+});
 
 resetButton.addEventListener('click', function(){
     // 生成新的颜色
-    colors = generateRandomColors(9);
+    colors = generateRandomColors(numberOfSquares);
     // 从数组中挑选一个随机颜色
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
