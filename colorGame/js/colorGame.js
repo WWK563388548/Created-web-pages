@@ -1,22 +1,48 @@
 var numberOfSquares = 9;
-var colors = generateRandomColors(numberOfSquares);
+var colors = [];
+var pickedColor;
 var squares = document.querySelectorAll(".square");
-var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
 
-for(var i = 0; i < modeButtons.length; i++) {
-    modeButtons[i].addEventListener("click", function(){
-        modeButtons[0].classList.remove("selected");
-        modeButtons[1].classList.remove("selected");
-        this.classList.add("selected");
-        this.textContent === "Easy" ? numberOfSquares = 3 : numberOfSquares = 9;
-        reset();
-        // 显示多少颜色方块
-    });
+init();
+
+function init() {
+    // 游戏难度选择
+    for(var i = 0; i < modeButtons.length; i++) {
+        modeButtons[i].addEventListener("click", function(){
+            modeButtons[0].classList.remove("selected");
+            modeButtons[1].classList.remove("selected");
+            this.classList.add("selected");
+            this.textContent === "Easy" ? numberOfSquares = 3 : numberOfSquares = 9;
+            reset();
+        });
+    }
+
+    // 生成颜色方块
+    // 不要使用style.background, 为了适配更多浏览器
+    for (var i = 0; i < squares.length; i++) {
+        // 向square添加点击监听
+        squares[i].addEventListener("click", function(){
+            // 获取方块颜色
+            var clickedColor = this.style.backgroundColor;
+            if(clickedColor === pickedColor) {
+                messageDisplay.textContent = "Correct!";
+                resetButton.textContent = "Play Again?";
+                changeColors(clickedColor);
+                h1.style.backgroundColor = clickedColor;
+            } else {
+                this.style.backgroundColor = '#232323';
+                messageDisplay.textContent = "Try Again!";
+            }
+        });
+    }
+
+    reset();
+
 }
 
 function reset() {
@@ -42,30 +68,6 @@ function reset() {
 resetButton.addEventListener('click', function(){
     reset();
 });
-
-
-colorDisplay.textContent = pickedColor;
-
-// 不要使用style.background, 为了适配更多浏览器
-for (var i = 0; i < squares.length; i++) {
-    // 向square添加初始颜色
-    squares[i].style.backgroundColor = colors[i];
-
-    // 向square添加点击监听
-    squares[i].addEventListener("click", function(){
-       // 获取方块颜色
-       var clickedColor = this.style.backgroundColor;
-       if(clickedColor === pickedColor) {
-          messageDisplay.textContent = "Correct!";
-          resetButton.textContent = "Play Again?";
-          changeColors(clickedColor);
-          h1.style.backgroundColor = clickedColor;
-       } else {
-          this.style.backgroundColor = '#232323';
-          messageDisplay.textContent = "Try Again!";
-       }
-    });
-}
 
 function changeColors(color) {
    // 循环所有颜色方块
