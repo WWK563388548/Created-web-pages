@@ -6,51 +6,41 @@ var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
-var easyBtn = document.querySelector("#easyBtn");
-var hardBtn = document.querySelector("#hardBtn");
+var modeButtons = document.querySelectorAll(".mode");
 
-easyBtn.addEventListener("click", function(){
-    hardBtn.classList.remove("selected");
-    easyBtn.classList.add("selected");
-    numberOfSquares = 3;
-    colors = generateRandomColors(numberOfSquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for(var i = 0; i < squares.length; i++){
-        if(colors[i]){
-            squares[i].style.backgroundColor = colors[i];
-        } else {
-           squares[i].style.display = "none";
-        }
-    }
-});
+for(var i = 0; i < modeButtons.length; i++) {
+    modeButtons[i].addEventListener("click", function(){
+        modeButtons[0].classList.remove("selected");
+        modeButtons[1].classList.remove("selected");
+        this.classList.add("selected");
+        this.textContent === "Easy" ? numberOfSquares = 3 : numberOfSquares = 9;
+        reset();
+        // 显示多少颜色方块
+    });
+}
 
-hardBtn.addEventListener("click", function(){
-    hardBtn.classList.add("selected");
-    easyBtn.classList.remove("selected");
-    numberOfSquares = 9;
-    colors = generateRandomColors(numberOfSquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for(var i = 0; i < squares.length; i++){
-        squares[i].style.backgroundColor = colors[i];
-        squares[i].style.display = "block";
-    }
-});
-
-resetButton.addEventListener('click', function(){
+function reset() {
     // 生成新的颜色
     colors = generateRandomColors(numberOfSquares);
     // 从数组中挑选一个随机颜色
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
-    this.textContent = "New Colors";
+    resetButton.textContent = "New Colors";
     messageDisplay.textContent = "";
     // 改变方块颜色
     for(var i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colors[i];
+        if(colors[i]) {
+            squares[i].style.display = "block";
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+           squares[i].style.display = "none";
+        }
     }
     h1.style.backgroundColor = "steelblue";
+}
+
+resetButton.addEventListener('click', function(){
+    reset();
 });
 
 
