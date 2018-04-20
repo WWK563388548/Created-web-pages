@@ -1,5 +1,7 @@
 body {
     background-color: #232323;
+    margin: 0;
+    font-family: 'Montserrat', 'Avenir';
 }
 
 .square {
@@ -8,15 +10,26 @@ body {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 15%;
+    transition: background-color 0.6s;
+    -webkit-transition: background-color 0.6s;
+    -moz-transition: background-color 0.6s;
 }
 
 #container {
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 600px;
 }
 
 h1 {
+    text-align: center;
+    line-height: 1.1;
     color: white;
+    background: steelblue;
+    margin: 0;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #stripe {
@@ -26,6 +39,36 @@ h1 {
     color: black;
 }
 
+#colorDisplay {
+    font-size: 200%;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
+}
+
 .selected {
-    background: blue;
+    color: white;
+    background: steelblue;
+}
+
+button {
+    /* 去掉所有button的效果后再风格化 */
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+button:hover {
+    background: steelblue;
+    color: white;
 }
