@@ -57,6 +57,7 @@ button {
     /* 去掉所有button的效果后再风格化 */
     border: none;
     background: none;
+    outline: none;
     text-transform: uppercase;
     height: 100%;
     font-weight: 700;

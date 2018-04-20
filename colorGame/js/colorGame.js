@@ -44,6 +44,8 @@ resetButton.addEventListener('click', function(){
     // 从数组中挑选一个随机颜色
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
+    this.textContent = "New Colors";
+    messageDisplay.textContent = "";
     // 改变方块颜色
     for(var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colors[i];
