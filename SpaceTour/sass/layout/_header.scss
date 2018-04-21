@@ -1,0 +1,37 @@
+.header {
+    /* percent of viewport height(dynamic design) */
+    height: 95vh;
+    /* linear-gradient: 颜色渐变（从右下到左上） */
+    background-image: linear-gradient(
+        to right bottom,
+          rgba($color-primary-light, 0.6),
+          rgba($color-primary-dark, 0.6)),
+          url(../img/header-img.jpg);
+    background-size: cover;
+    background-position: top;
+    /* A modern css property */
+    /* cut a triangle */
+    clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+    position: relative;
+
+    /* "&"在这里代表".header" */
+    &__log-box {
+        position: absolute;
+    }
+
+    &__logo {
+        height: 8rem;
+        margin-top: 4rem;
+        margin-left: 4rem;
+        animation: moveInLeft 1s ease-out;
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        /* make box in center */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

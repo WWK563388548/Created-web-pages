@@ -1,0 +1,63 @@
+/* Reused button */
+.btn {
+    /* "&"在这里代表".btn" */
+    /* pseudo-classes */
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        /* 两边变圆 */
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
+    }
+ 
+    /* 点击按钮，按钮向下按压动画实现 */
+    &:hover {
+        transform: translateY(-3px);
+        /* 增加阴影的属性 */
+        box-shadow: 0 1rem 2rem rgba($color-black-shadow, 0.2);
+
+        &::after {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+    /* 当点击时触发 */
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black-shadow, 0.2);
+    }
+ 
+ 
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        /* "&"在这里代表"-white" */
+        &::after {
+            background-color: $color-white;
+        }
+    }
+ 
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+ 
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}

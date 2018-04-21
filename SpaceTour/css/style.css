@@ -5,58 +5,73 @@ Light blue: #87CEFA
 Medium blue: #00BFFF
 Dark blue: #1E90FF
 */
-* {
+/* 动画：主标题向左移动 */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    /* 根据x轴 */
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* 动画：主标题向右移动 */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    /* 根据x轴 */
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/* This is partial file for import(_fileName.scss) */
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* 这个定义了1rem的标准 */
+  /* 1rem = 10px */
+  font-size: 62.5%; }
+
+body {
   box-sizing: border-box; }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 25px; }
-
-.header {
-  /* percent of viewport height(dynamic design) */
-  height: 95vh;
-  /* linear-gradient: 颜色渐变（从右下到左上） */
-  background-image: linear-gradient(to right bottom, rgba(135, 206, 250, 0.6), rgba(30, 144, 255, 0.6)), url(../img/header-img.jpg);
-  background-size: cover;
-  background-position: top;
-  /* A modern css property */
-  /* cut a triangle */
-  clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
-  position: relative;
-  /* "&"在这里代表".header" */ }
-  .header__log-box {
-    position: absolute; }
-  .header__logo {
-    height: 80px;
-    margin-top: 40px;
-    margin-left: 40px;
-    animation: moveInLeft 1s ease-out; }
-  .header__text-box {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    /* make box in center */
-    transform: translate(-50%, -50%);
-    text-align: center; }
+  padding: 3rem; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   /* 解决动画进行时背景的颤动 */
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
   /* "&"在这里代表".heading-primary" */ }
   .heading-primary--main {
     display: block;
-    font-size: 50px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 30px;
+    letter-spacing: 3rem;
     /* 设置动画 */
     animation-name: moveInLeft;
     /* 设置动画时间 */
@@ -68,40 +83,13 @@ body {
     /*animation-iteration-count: 3;*/ }
   .heading-primary--sub {
     display: block;
-    font-size: 20px;
-    letter-spacing: 11px;
+    font-size: 2rem;
+    letter-spacing: 1.1rem;
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-in; }
 
-/* 动画：主标题向左移动 */
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    /* 根据x轴 */
-    transform: translateX(-100px); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-/* 动画：主标题向右移动 */
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    /* 根据x轴 */
-    transform: translateX(100px); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
+/* Reused button */
 .btn {
   /* "&"在这里代表".btn" */
   /* pseudo-classes */
@@ -110,22 +98,23 @@ body {
   .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
     /* 两边变圆 */
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s;
-    position: relative; }
+    position: relative;
+    font-size: 1.6rem; }
   .btn:hover {
     transform: translateY(-3px);
     /* 增加阴影的属性 */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
     .btn:hover::after {
       transform: scale(1.5);
       opacity: 0; }
   .btn:active {
     transform: translateY(-1px);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn--white {
     background-color: #fff;
     color: #777;
@@ -146,3 +135,30 @@ body {
   .btn--animated {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards; }
+
+.header {
+  /* percent of viewport height(dynamic design) */
+  height: 95vh;
+  /* linear-gradient: 颜色渐变（从右下到左上） */
+  background-image: linear-gradient(to right bottom, rgba(135, 206, 250, 0.6), rgba(30, 144, 255, 0.6)), url(../img/header-img.jpg);
+  background-size: cover;
+  background-position: top;
+  /* A modern css property */
+  /* cut a triangle */
+  clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+  position: relative;
+  /* "&"在这里代表".header" */ }
+  .header__log-box {
+    position: absolute; }
+  .header__logo {
+    height: 8rem;
+    margin-top: 4rem;
+    margin-left: 4rem;
+    animation: moveInLeft 1s ease-out; }
+  .header__text-box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    /* make box in center */
+    transform: translate(-50%, -50%);
+    text-align: center; }
