@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Budget</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" media="screen" href="public/css/style.css" />
+    </head>
+    <body>
+        <div class="top">
+            <div class="budget">
+                <div class="budget__title">
+                    <span class="budget__title--month">%Month%</span>的可用预算:
+                </div>
+                        
+                <div class="budget__value">+ 66,000.00</div>
+                        
+                <div class="budget__income clearfix">
+                    <div class="budget__income--text">收入</div>
+                    <div class="right">
+                        <div class="budget__income--value">+ 169,823.00</div>
+                        <div class="budget__income--percentage">&nbsp;</div>
+                    </div>
+                </div>
+                        
+                <div class="budget__expenses clearfix">
+                    <div class="budget__expenses--text">支出</div>
+                    <div class="right clearfix">
+                        <div class="budget__expenses--value">- 103,823.00</div>
+                        <div class="budget__expenses--percentage">65%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="add">
+                <div class="add__container">
+                    <select class="add__type">
+                        <option value="inc" selected>收入</option>
+                        <option value="exp">支出</option>
+                    </select>
+                    <input type="text" class="add__description" placeholder="Add description">
+                    <input type="number" class="add__value" placeholder="Value">
+                    <button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>
+                </div>
+            </div>
+                    
+            <div class="container clearfix">
+                <div class="income">
+                    <h2 class="icome__title">收入</h2>                           
+                    <div class="income__list">
+                                   
+                        <div class="item clearfix" id="income-0">
+                            <div class="item__description">工资</div>
+                            <div class="right clearfix">
+                                <div class="item__value">+ 160,000.00</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                                
+                        <div class="item clearfix" id="income-1">
+                            <div class="item__description">卖掉书</div>
+                            <div class="right clearfix">
+                                <div class="item__value">+ 3,786.00</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                        
+                <div class="expenses">
+                    <h2 class="expenses__title">支出</h2>
+                    <div class="expenses__list">
+                        <div class="item clearfix" id="expense-0">
+                            <div class="item__description">房租</div>
+                            <div class="right clearfix">
+                                <div class="item__value">- 83,000.00</div>
+                                <div class="item__percentage">21%</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="item clearfix" id="expense-1">
+                            <div class="item__description">购买技术书籍</div>
+                            <div class="right clearfix">
+                                <div class="item__value">- 9,546.00</div>
+                                <div class="item__percentage">10%</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+      
+                    </div>
+                </div>
+            </div>
+                        
+        </div>
+                
+        <script src="public/js/app.js"></script>
+    </body>
+</html>
