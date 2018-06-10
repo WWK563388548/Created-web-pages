@@ -124,3 +124,34 @@ body {
     color: #666666;
     font-size: 14px;
 }
+
+/* 8. Grid */
+body {
+    display: grid;
+    /* 圣杯式布局 */
+    grid-template-areas: 
+                "head head head"
+                "side1 main side2"
+                "foot foot foot";
+    /* Grid列的宽度的指定 */
+    /* 第三列宽度为固定200px，剩下部分按1:5比例划分 */
+    grid-template-columns: 1fr 5fr 200px;
+        
+}
+
+/* 配置各个内容的Grid */
+.site_name {
+    grid-area: head;
+}
+.menu {
+    grid-area: side1;
+}
+.articles {
+    grid-area: main;
+}
+.about_articles {
+    grid-area: side2;
+}
+.footerbar {
+    grid-area: foot;
+}
