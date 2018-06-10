@@ -20,3 +20,29 @@ body {
     font-family: 'Paytone One', sans-serif;
     text-decoration: none;
 }
+
+/* 3. 设置导航菜单样式 */
+.menu {
+    padding: 40px 0;
+    background-color: #f0f0e9;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #770000;
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #662222;
+}
