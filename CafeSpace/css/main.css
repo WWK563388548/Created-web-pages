@@ -46,3 +46,39 @@ body {
 .menu li a:hover {
     background-color: #662222;
 }
+
+/* 5. 设置文章样式 */
+.articles {
+    padding: 40px;
+}
+
+.articles img {
+    max-width: 100%;
+    height: auto;
+}
+
+.articles h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.articles h1 span {
+    display: block;
+    margin-bottom: 20px;
+    color: #930000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.articles p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 2;
+    text-align: justify;
+}
+
+.articles_info {
+    margin-bottom: 20px;
+    color: #666666;
+}
