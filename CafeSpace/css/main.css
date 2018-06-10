@@ -82,3 +82,45 @@ body {
     margin-bottom: 20px;
     color: #666666;
 }
+
+/* 6. 关联文章菜单样式 */
+.about_articles {
+    padding: 40px 20px;
+    background-color: #f0f0e9;
+}
+
+.about_articles ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about_articles li a {
+    display: block;
+    padding: 5px;
+    color: #000000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.about_articles img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about_articles li a:hover {
+    background-color: #eeeeee;
+}
+
+/* 7. footer样式 */
+.footerbar {
+    background-color: #444444;
+    padding: 10px;
+    text-align: center;
+}
+
+.footerbar p {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+}
