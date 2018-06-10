@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* 1.初始化样式 */
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', 'メイリオ',
+     'Hiragino Kaku Gothic Pro', sans-serif;
+}
+
+/* 2.网站名的样式 */
+.site_name {
+    background-color: #444444;
+    padding: 10px;
+    text-align: center
+}
+
+.site_name a {
+    color:#ffffff;
+    font-size: 30px;
+    font-family: 'Paytone One', sans-serif;
+    text-decoration: none;
+}
