@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/* 0.初始化样式 */
+body {
+    margin: 0;
+}
+
+/* 1.网站名样式 */
+.site_name {
+    margin: 5px 0;
+}
+
+.site_name a {
+    color: #83a4a8;
+    font-size: 30px;
+    font-family: 'Paytone One', 'sans-serif';
+    text-decoration: none;
+}
