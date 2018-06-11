@@ -127,7 +127,9 @@ body {
 
 /* 8. Grid */
 body {
-    display: grid;
+    /* 为了避免Grid无效但与小画面相同的布局出现 */
+    /* 从display: grid改为display: block */
+    display: block;
     /* 圣杯式布局 */
     grid-template-areas: 
                 "head head head"
@@ -154,4 +156,32 @@ body {
 }
 .footerbar {
     grid-area: foot;
+}
+
+/* 9.加入适应性布局 */
+/* ############### 600 ~ 999px ############## */
+/* 中画面用的Grid */
+@media (min-width: 600px) and (max-width: 999px) {
+    /* Grid */
+    body {
+        grid-template-areas: "head head"
+                             "side1 main"
+                             "side2 side2"
+                             "foot foot";
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+/* ############### 599px以下 ############## */
+/* 小画面用的Grid */
+@media (max-width: 599px) {
+    /* Grid */
+    body {
+        grid-template-areas: "head"
+                             "side1"
+                             "main"
+                             "side2"
+                             "foot";
+        grid-template-columns: 1fr;
+    }
 }
