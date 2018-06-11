@@ -3,8 +3,6 @@
 /* 1.初始化样式 */
 body {
     margin: 0;
-    font-family: 'Source Sans Pro', 'メイリオ',
-     'Hiragino Kaku Gothic Pro', sans-serif;
 }
 
 /* 2.网站名的样式 */
@@ -127,9 +125,7 @@ body {
 
 /* 8. Grid */
 body {
-    /* 为了避免Grid无效但与小画面相同的布局出现 */
-    /* 从display: grid改为display: block */
-    display: block;
+    display: grid;
     /* 圣杯式布局 */
     grid-template-areas: 
                 "head head head"
@@ -176,12 +172,44 @@ body {
 /* 小画面用的Grid */
 @media (max-width: 599px) {
     /* Grid */
+    /* 若想在Grid无效时作出小画面相同的布局 */
+    /* 从display: grid改为display: block即可 */
     body {
+        display: block;
         grid-template-areas: "head"
                              "side1"
                              "main"
                              "side2"
                              "foot";
         grid-template-columns: 1fr;
+    }
+
+    /* 10. 设置自适应导航菜单样式（小画面） */
+    .menu {
+        padding: 0;
+        /* 在网站名与导航菜单之间加入区分线 */
+        border-top: solid 1px #ffffff;
+    }
+    
+    .menu ul {
+        display: flex;
+    }
+
+    /* 按照1:1:1:1的比例划分菜单每项的大小 */
+    .menu li {
+        flex: 1;
+    }
+
+    /* 在第一项以外的<li>左侧添加区分线 */
+    .menu li:not(:first-child) {
+        border-left: solid 1px #ffffff;
+    }
+    
+    .menu li a {
+        margin-bottom: 0;
+        /* 导航菜单中的文字样式修改 */
+        padding: 10px 0;
+        font-size: 12px;
+        text-align: center;
     }
 }
