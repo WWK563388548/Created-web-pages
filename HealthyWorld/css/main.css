@@ -16,3 +16,66 @@ body {
     font-family: 'Paytone One', 'sans-serif';
     text-decoration: none;
 }
+
+/* 2.导航菜单样式 */
+.menu {
+    background-color: #7cbac1;
+}
+
+.menu ul {
+    /* 横向摆放菜单 */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px;
+    color: #000000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #eeeeee;
+}
+
+/* 3.文章内容样式 */
+.contents img {
+    max-width: 100%;
+    height: auto
+}
+
+.contents h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.contents h2 {
+    margin-top: 40px;
+    border-bottom: dotted 1px #7cbac1;
+    font-weight: normal;
+}
+
+.contents h1 span {
+    display: block;
+    margin-bottom: 20px;
+    color: #75dbe7;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contents p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 2;
+    text-align: justify;
+}
+
+.contents_info {
+    margin-bottom: 20px;
+    color: #666666;
+}
