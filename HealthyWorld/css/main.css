@@ -156,13 +156,49 @@ body {
 }
 
 /* 5.footer样式 */
-.copyright {
+.footer {
     border-top: solid 1px #dddddd;
     padding: 20px 0;
 }
 
-.copyright p {
+.footer p {
     margin: 0;
     color: #666666;
     font-size: 14px;
+}
+
+/* 6.创建Grid */
+body {
+    display: grid;
+    grid-template-columns: 1fr 700px 50px 300px 1fr;
+    grid-template-rows: auto auto 40px auto 30px auto;
+}
+
+.site_name {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.menu {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+}
+
+.contents {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.sidebar {
+    grid-column-start: 4;
+    grid-row-start: 4;
+}
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: -2;
 }
