@@ -33,7 +33,7 @@ body {
 .menu li a {
     display: block;
     padding: 15px;
-    color: #000000;
+    color: #ffffff;
     font-size: 14px;
     text-decoration: none;
 }
@@ -78,4 +78,91 @@ body {
 .contents_info {
     margin-bottom: 20px;
     color: #666666;
+}
+
+/* 4.sidebar样式 */
+.sidebar div {
+    margin-bottom: 30px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: dotted 2px #dddddd;
+    color: #666666;
+    font-size: 18px;
+}
+
+.sidebar img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 最新文章样式 */
+.new ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.new li a {
+    display: block;
+    padding: 5px;
+    color: #000000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.new li a:hover {
+    background-color: #eeeeee;
+}
+
+/* 推荐文章样式 */
+.recommand ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.recommand li a {
+    display: block;
+    padding: 5px;
+    color: #000000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.recommand li a:hover {
+    background-color: #eeeeee;
+}
+
+/* 人气文章样式 */
+.special ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.special li a {
+    display: block;
+    padding: 5px;
+    color: #000000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.special li a:hover {
+    background-color: #eeeeee;
+}
+
+/* 5.footer样式 */
+.copyright {
+    border-top: solid 1px #dddddd;
+    padding: 20px 0;
+}
+
+.copyright p {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
 }
