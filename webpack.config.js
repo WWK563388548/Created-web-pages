@@ -1,8 +1,21 @@
 // Created webpack.config.js of Webpack 4
 // created by wwk
 const path = require('path');
+// Required this plugin for clean the dist file.
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+// Required this plugin for create index.html automatically.
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
 	mode: 'development',
+	plugins: [
+		// Clean dist file before bundle files
+		new CleanWebpackPlugin(['dist']),
+		// Create index.html automatically, and set the title of page
+		new HtmlWebpackPlugin({
+			title: 'ProjectTitle'
+		})
+	],
 	module: {
 		rules: [
 			{
