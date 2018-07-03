@@ -26,7 +26,7 @@ module.exports = {
 				],
 				loader: 'babel-loader',
 				options: {
-					presets: ['@babel/preset-react'],
+					presets: ['@babel/preset-react', 'env', 'stage-0'],
 					plugins: ['@babel/plugin-proposal-class-properties']
 				}
 			},
