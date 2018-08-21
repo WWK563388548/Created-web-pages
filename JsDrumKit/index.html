@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>架子鼓</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <!-- 在HTML5中添加了data-*的方式来自定义属性，
+        所谓data-*实际上上就是data-前缀加上自定义的属性名，
+        使用这样的结构可以进行数据存放。 -->
+    <div class="keys">
+        <div data-key="65" class="key">
+            <!-- HTML键盘输入元素(<kbd>) 用于表示用户输入，它将产生一个行内元素 -->
+            <kbd>A</kbd>
+            <span class="sound">clap</span>
+        </div>
+        <div data-key="83" class="key">
+            <kbd>S</kbd>
+            <span class="sound">hihat</span>
+        </div>
+        <div data-key="68" class="key">
+            <kbd>D</kbd>
+            <span class="sound">kick</span>
+        </div>
+        <div data-key="70" class="key">
+            <kbd>F</kbd>
+            <span class="sound">openhat</span>
+        </div>
+        <div data-key="71" class="key">
+            <kbd>G</kbd>
+            <span class="sound">boom</span>
+        </div>
+        <div data-key="72" class="key">
+            <kbd>H</kbd>
+            <span class="sound">ride</span>
+        </div>
+        <div data-key="74" class="key">
+            <kbd>J</kbd>
+            <span class="sound">snare</span>
+        </div>
+        <div data-key="75" class="key">
+            <kbd>K</kbd>
+            <span class="sound">tom</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>L</kbd>
+            <span class="sound">tink</span>
+        </div>
+    </div>
+
+    <audio data-key="65" src="assets/clap.wav"></audio>
+    <audio data-key="83" src="assets/hihat.wav"></audio>
+    <audio data-key="68" src="assets/kick.wav"></audio>
+    <audio data-key="70" src="assets/openhat.wav"></audio>
+    <audio data-key="71" src="assets/boom.wav"></audio>
+    <audio data-key="72" src="assets/ride.wav"></audio>
+    <audio data-key="74" src="assets/snare.wav"></audio>
+    <audio data-key="75" src="assets/tom.wav"></audio>
+    <audio data-key="76" src="assets/tink.wav"></audio>
+
+
+</body>
+</html>
